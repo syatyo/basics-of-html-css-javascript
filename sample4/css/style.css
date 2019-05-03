@@ -19,6 +19,9 @@ h1 {
     text-align: right;
 }
 
-.form-check-inline {
-    float: none;
+@media only screen and (max-width: 992px) {
+    .form-check-inline {
+        display: block;
+        margin: 0 !important
+    }
 }
