@@ -99,3 +99,26 @@ footer {
 header h1 {
     font-family: 'Sriracha', cursive;
 }
+
+@media only screen and (max-width:600px) {
+    
+    .description img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 5px;
+    }
+
+    header h1 {
+        font-size: 12px;
+    }
+
+    .songs li {
+        float: none;
+        width: inherit;
+    }
+
+}
