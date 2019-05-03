@@ -85,3 +85,12 @@ header h1 {
     display: table;
     clear: both;
 }
+
+a {
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    font-size: 80%;
+}
