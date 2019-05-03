@@ -28,3 +28,7 @@ button {
     border-radius: 3px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .4);
 }
+
+.control {
+    margin-bottom: 3em;
+}
