@@ -46,3 +46,7 @@ label {
     background-color: #fee; /* 背景色を#feeに */
     font-weight: bold;
 }
+
+body {
+    background-color: #fafafa;
+}
