@@ -18,3 +18,7 @@ h1 {
 .align-right {
     text-align: right;
 }
+
+.form-check-inline {
+    float: none;
+}
