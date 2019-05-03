@@ -30,6 +30,7 @@ header h1 {
 .description img {
     float: left;
     margin: 0 10px 10px 0;
+    transition: opacity 1s ease 0s;
 }
 
 .information h1 {
@@ -121,4 +122,8 @@ header h1 {
         width: inherit;
     }
 
+}
+
+.description img:hover {
+    opacity: .5;
 }
