@@ -1,7 +1,7 @@
+/* sanitizeしてからじゃないとこのcssが役に立たないので、そのような依存関係を設定する時はcssで直接読みでやる　*/
+@import url(sanitize.css);
+
 h1 {
     font-size: 24px;
     margin: 0;
-}
-p {
-    font-size: 14px;
 }
