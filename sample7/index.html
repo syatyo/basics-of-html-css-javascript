@@ -12,11 +12,32 @@
     </header>
     <div class="container">
         <div id="img_unit">
-            <div class="photo">
-                <img src="img/img01.jpg">
-                <div class="inner"><p>こっちは貫禄ありすぎ<span>sansaisan</span></p></div>
-            </div>
         </div>
     </div><!-- container -->
+    <script>
+        const images = [
+            {
+                "path": "img/img01.jpg",
+                "name": "sansaisan",
+                "caption": "こっちは貫禄ありすぎ"
+            },
+            {
+                "path": "img/img02.jpg",
+                "name": "yuky_13dream",
+                "caption": "年明け富士山"
+            },
+            {
+                "path": "img/img03.jpg",
+                "name": "maako",
+                "caption": "空と大地の境界線って、どのあたり？"
+            }
+        ];
+
+        let img;
+        img = document.createElement('img');
+        img.setAttribute('src', images[0].path);
+
+        document.getElementById('img_unit').appendChild(img);
+    </script>
 </body>
 </html>
