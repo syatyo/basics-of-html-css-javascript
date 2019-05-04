@@ -1,0 +1,36 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TIMER</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <p id="timer">00:00:00</p>
+        <div>
+            <button id="start_stop" class="btn btn-lg btn-primary">START</button>
+        </div>
+        <script>
+            const addZero = function(value) {
+                if (value < 10) {
+                    value = '0' + value;
+                }
+                return value;
+            }
+
+            document.getElementById('start_stop').addEventListener('click', function() {
+                const date = new Date();
+                const seconds = addZero(date.getSeconds());
+                const minutes = addZero(date.getMinutes());
+                const hours = addZero(date.getHours());
+                const dateText = [hours, minutes, seconds].join(':');
+                document.getElementById('timer').innerHTML = dateText;
+            });
+        </script>
+    </div>
+</body>
+</html>
