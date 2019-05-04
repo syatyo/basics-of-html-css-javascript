@@ -15,20 +15,30 @@
             <button id="start_stop" class="btn btn-lg btn-primary">START</button>
         </div>
         <script>
-            const addZero = function(value) {
-                if (value < 10) {
-                    value = '0' + value;
-                }
-                return value;
+            const goTimer = function() {
+                const now = new Date()
+                
+                document.getElementById('timer').innerHTML = now.getSeconds();
             }
 
+            let timer_id;
             document.getElementById('start_stop').addEventListener('click', function() {
-                const date = new Date();
-                const seconds = addZero(date.getSeconds());
-                const minutes = addZero(date.getMinutes());
-                const hours = addZero(date.getHours());
-                const dateText = [hours, minutes, seconds].join(':');
-                document.getElementById('timer').innerHTML = dateText;
+                if (this.innerHTML == 'START') {
+                    const start = new Date();
+                    timer_id = setInterval(goTimer, 1000);
+                    
+                    // STOP
+                    this.innerHTML = 'STOP';
+                    this.classList.remove('btn-primary');
+                    this.classList.add('btn-danger');
+                } else {
+                    clearInterval(timer_id);
+                    
+                    this.innerHTML = 'START';
+                    this.classList.remove('btn-danger');
+                    this.classList.add('btn-primary');
+                }
+                
             });
         </script>
     </div>
