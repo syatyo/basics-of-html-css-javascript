@@ -13,18 +13,27 @@
     </header>
     <div class="container">
         <div id="img_unit">
+            <div class="photo" v-for="Photo in Photos">
+                <img :src="Photo.path">
+                <div class="inner"><p>{{Photo.caption}}<span>{{Photo.name}}</span></p></div>
+            </div>
         </div>
     </div><!-- container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        $.getJSON('https://h2o-space.com/htmlbook/images.php', function(response) {
-            response.forEach(element => {
-                $('<div class="photo"></div>')
-                .append('<img src="' + element.path + '">')
-                .append('<div class="inner"><p>' + element.caption + '<span>' + element.name + '</span></p></div>')
-                .appendTo('#img_unit');
-            });
+        const app = new Vue({
+            el: '#img_unit',
+            data: {
+                Photos: []
+            },
+            created: function() {
+                const self = this;
+                $.getJSON('https://h2o-space.com/htmlbook/images.php', function(response) {
+                    self.Photos = response;
+                });
+            },
         });
-    </script>   
+    </script>
 </body>
 </html>
